@@ -12,22 +12,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>TTA - We style you !
-          <style>
-            h1 {text-align: center;}</style>
-        </h1>
-        <hr>
-        <div class="row">
-            <div class="col-sm">
-              Home
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">TTA - We style you !</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#ourLocation">Location</a>
+              <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#subscribeModal">Subscribe</a>
             </div>
-            <div class="col-sm">
-              Menu 2
-            </div>
-            <div class="col-sm">
-              <a href="#" data-toggle="modal" data-target="#subscribeModal">Join US</a>
-            </div>
-        </div>
+          </div>
+        </nav>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -65,7 +62,7 @@
                   <h5 class="card-title">Chunky High Heels</h5>
                   <p class="card-text">Red Comfortable Slip On Pumps, Daily Dress Heels, It will light up our day.</p>
                   <h5>Price $25</h5>
-                  <a href="#" class="btn btn-primary">Add To Cart</a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addToCartDetails" onclick="showProductDetails('images/product1.jpg', 'Chunky High Heels', 'Red Comfortable Slip On Pumps, Daily Dress Heels, It will light up our day.', 25)">Add To Cart</a>
                 </div>
               </div>
               <div class="card" style="width: 18rem;">
@@ -74,7 +71,7 @@
                   <h5 class="card-title">Cushion Sneaker</h5>
                   <p class="card-text">Casual Canvas Walking Shoes, Women's Footwear. Great for Walking. </p>
                   <h5>Price $20</h5>
-                  <a href="#" class="btn btn-primary">Add To Cart</a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addToCartDetails" onclick="showProductDetails('images/product2.jpg', 'Cushion Sneaker', 'Casual Canvas Walking Shoes, Womens Footwear. Great for Walking.', 20)">Add To Cart</a>
                 </div>
               </div>
               <div class="card" style="width: 18rem;">
@@ -83,7 +80,7 @@
                   <h5 class="card-title">Chunky High Heels</h5>
                   <p class="card-text">Women's Black Court Pumps, Round Toe Slip On Chunky High Heels, Formal Dress Pumps.</p>
                   <h5>Price $25</h5>
-                  <a href="#" class="btn btn-primary">Add To Cart</a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addToCartDetails" onclick="showProductDetails('images/product3.jpg', 'Chunky High Heels', 'Womens Black Court Pumps, Round Toe Slip On Chunky High Heels, Formal Dress Pumps.', 25)">Add To Cart</a>
                 </div>
               </div>
               <div class="card" style="width: 18rem;">
@@ -92,7 +89,7 @@
                   <h5 class="card-title">Hiking Riding Shoes</h5>
                   <p class="card-text">Men's Fashionable Non Slip Outdoor Shoes For Hiking Mountaineering Walking Riding.</p>
                   <h5>Price $50</h5>
-                  <a href="#" class="btn btn-primary">Add To Cart</a>
+                  <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#addToCartDetails" onclick="showProductDetails('images/product4.jpg', 'Hiking Riding Shoes', 'Mens Fashionable Non Slip Outdoor Shoes For Hiking Mountaineering Walking Riding.', 50)">Add To Cart</a>
                 </div>
               </div>
         </div>
@@ -104,11 +101,60 @@
         </div>
     </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="addToCartDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productName">Product Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-4"><img class="card-img-top" id="productImage" src="images/product1.jpg"></div>
+          <div class="col-6" id="popupDescription"></div>
+        </div>
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-6" id="productPrice"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Location Modal -->
+<div class="modal fade" id="ourLocation" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Our Location</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        9011 140th st Jamaica Ny 11435
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="modal" tabindex="-1" role="dialog" id="subscribeModal">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Join Us</h5>
+              <h5 class="modal-title">Subscribe</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -162,6 +208,18 @@
           </div>
         </div>
       </div>
+
+      <script>
+        var productCart = [];
+
+        function showProductDetails(imageUrl, name, Description, Price)
+        {
+          $("#productImage").attr("src",imageUrl);
+          $("#popupDescription").html(Description);
+          $("#productName").html(name);
+          $("#productPrice").html("Price: $"+Price);
+        }
+      </script>
 
 </body>
 </html>
